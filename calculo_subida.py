@@ -4,12 +4,25 @@ while True:
     try:
         elevacao = int(input('Elevação do aeródromo, em pés: '))
         fl = int(input('Nível de cruzeiro, em FL: '))
+        if fl < 0:
+            raise ValueError
         temperatura = float(input('Temperatura, em graus Celsius: '))
         razao_subida = int(input('Informe a razão de subida (ft/min): '))
+        if razao_subida <= 0:
+            print('A razão de subida não pode ser negativa ou nula. Sua mula. -- olha, até rimou!')
+            raise ValueError
         velocidade = float(input('Entre com a velocidade indicada, em nós: '))
+        if velocidade <= 0:
+            print('A velocidade não pode ser nula ou negativa. Tem certeza que você quer voar?')
+            raise ValueError
         direcao_vento = float(input('Entre com a direção do vento, em graus: '))
-        velocidade_vento = float(input('Entre com a velocidade do vento de subida, em nós: '))       
-        
+        if direcao_vento < 0 or direcao_vento > 360:
+            print('O valor informado é em graus. Pegue uma bússola. Entre 0 e 360. Você consegue.')
+            raise ValueError
+        velocidade_vento = float(input('Entre com a velocidade do vento de subida, em nós: '))
+        if velocidade_vento <0:
+            print('Tá de sacanagem, né? Vento com valor negativo, igual seu Q.I.')
+            raise ValueError
 
         fl = fl * 100
         delta_altura = fl - elevacao                # Variacao de altura
