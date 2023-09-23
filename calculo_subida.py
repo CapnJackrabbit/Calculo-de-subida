@@ -1,0 +1,38 @@
+import math
+
+while True:
+    try:
+        elevacao = int(input('Elevação do aeródromo, em pés: '))
+        fl = int(input('Nível de cruzeiro, em FL: '))
+        temperatura = float(input('Temperatura, em graus Celsius: '))
+        razao_subida = int(input('Informe a razão de subida (ft/min): '))
+        velocidade = float(input('Entre com a velocidade indicada, em nós: '))
+        direcao_vento = float(input('Entre com a direção do vento, em graus: '))
+        velocidade_vento = float(input('Entre com a velocidade do vento de subida, em nós: '))       
+        
+
+        fl = fl * 100
+        delta_altura = fl - elevacao                # Variacao de altura
+        fator = (fl + elevacao) * 0.00001           
+        tempo = delta_altura / razao_subida         # Tempo
+        delta_temp = (delta_altura * 2) / 1000      # Variação de temperatura
+        temp_fl = temperatura - delta_temp          # Temperatura do FL
+        ams = (fl + elevacao) / 2                   # Altitude média de subida
+        tms = (temp_fl + temperatura) / 2           # Temperatura média de subida
+        vams = velocidade * (1 + fator)             # Velocidade média aerodinâmica de subida
+
+        print()
+        print('Variação de altura: {} pés'.format(delta_altura))
+        print('Tempo: {} minutos'.format(tempo))
+        print('Variação de temperatura: {} °C'.format(delta_temp))
+        print('Temperatura no FL: {} °C'.format(temp_fl))
+        print('Altitude média de subida: {} pés'.format(ams))
+        print('Temperatura média de subida: {} °C'.format(tms))
+        print('Velocidade média aerodinâmica de subida: {} nós'.format(vams))
+
+    except ValueError:
+        print('Valor informado é inválido...')
+
+    replay = input('Pressione qualquer tecla para calcular novamente, N para sair: ')
+    if replay == 'N' or replay == 'n':
+        break
