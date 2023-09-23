@@ -49,6 +49,8 @@ while True:
     except ValueError:
         print('Valor informado é inválido...')
 
+    print()
     replay = input('Pressione qualquer tecla para calcular novamente, N para sair: ')
+    print()
     if replay == 'N' or replay == 'n':
         break
