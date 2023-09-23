@@ -39,12 +39,12 @@ while True:
 
         print()
         print('Variação de altura: {} pés'.format(delta_altura))
-        print('Tempo: {} minutos'.format(tempo))
+        print('Tempo: {:.1f} minutos'.format(tempo))
         print('Variação de temperatura: {} °C'.format(delta_temp))
-        print('Temperatura no FL: {} °C'.format(temp_fl))
+        print('Temperatura no FL: {:.1f} °C'.format(temp_fl))
         print('Altitude média de subida: {} pés'.format(ams))
-        print('Temperatura média de subida: {} °C'.format(tms))
-        print('Velocidade média aerodinâmica de subida: {} nós'.format(vams))
+        print('Temperatura média de subida: {:.1f} °C'.format(tms))
+        print('Velocidade média aerodinâmica de subida: {:.1f} nós'.format(vams))
 
     except ValueError:
         print('Valor informado é inválido...')
