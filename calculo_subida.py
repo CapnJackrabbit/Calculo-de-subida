@@ -16,15 +16,15 @@ while True:
             print()
             print('A velocidade não pode ser nula ou negativa. Tem certeza que você quer voar?')
             raise ValueError
-        direcao_vento = float(input('Entre com a direção do vento, em graus: '))
-        if direcao_vento < 0 or direcao_vento > 360:
-            print()
-            print('O valor informado é em graus. Pegue uma bússola. Entre 0 e 360. Você consegue.')
-            raise ValueError
-        velocidade_vento = float(input('Entre com a velocidade do vento de subida, em nós: '))
-        if velocidade_vento <0:
-            print()
-            print('Tá de sacanagem, né? Vento com valor negativo, igual seu Q.I.')
+        # direcao_vento = float(input('Entre com a direção do vento, em graus: '))
+        # if direcao_vento < 0 or direcao_vento > 360:
+        #     print()
+        #     print('O valor informado é em graus. Pegue uma bússola. Entre 0 e 360. Você consegue.')
+        #     raise ValueError
+        # velocidade_vento = float(input('Entre com a velocidade do vento de subida, em nós: '))
+        # if velocidade_vento <0:
+        #     print()
+        #     print('Tá de sacanagem, né? Vento com valor negativo, igual seu Q.I.')
             raise ValueError
 
         fl = fl * 100
